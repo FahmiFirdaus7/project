@@ -36,7 +36,15 @@
         </button>
       </form>
 
-      <p class="text-sm text-center mt-6 text-gray-200">© 2025 Hiking Adventure</p>
+      <!-- Tambahan Sign Up -->
+      <p class="text-center text-sm mt-4 text-gray-200">
+        Belum punya akun?
+        <a href="register.php" class="text-green-300 hover:text-green-400 font-semibold">
+          Sign up di sini
+        </a>
+      </p>
+
+      <p class="text-sm text-center mt-6 text-gray-200">© 2025 Hiking Hub</p>
     </div>
   </div>
 
