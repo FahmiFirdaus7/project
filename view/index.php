@@ -1,3 +1,18 @@
+<?php
+
+    require_once '../koneksi.php';
+
+    session_start();
+
+    if (!isset($_SESSION['username'])) {
+        header("Location: login.php");
+        exit();
+    } 
+
+    $username = $_SESSION['username'];
+    $role = $_SESSION['role'];
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -90,22 +105,30 @@
   </nav>
 </header>
 
-<section id="home" class="hero d-flex align-items-center justify-content-center text-center text-white">  
-  <div class="container hero-content">
-    <h1 class="display-4 fw-bold mb-3">Jelajahi Keindahan Alam</h1>
-    <p class="lead mb-4">Rasakan petualangan mendaki gunung bersama kami — temukan rute terbaik, teman baru, dan pengalaman tak terlupakan.</p>
-    <a href="#rute" class="btn btn-success btn-lg px-4">Mulai Petualangan</a>
-  </div>
-</section>
+<section id="home" class="position-relative vh-100 d-flex justify-content-center align-items-center text-white text-center overflow-hidden">
 
-<section id="tentang" class="py-5 bg-secondary text-center">
-  <div class="container">
-    <h2 class="fw-bold mb-3" style="color:white">Tentang Kami</h2>
-    <p class="mx-auto" style="max-width: 650px; color: white;">
-      Website ini dibuat karena terinspirasi dari latar belakang hobi kami sebagai pendaki gunung yang ingin berbagi informasi dan pengalaman yang selama ini sudah kami alami,
-      selain itu, Website ini untuk mengabadikan momen bersejarah dimana entitas dari informatika bukan orang nolep.
-    </p>
-  </div>
+    <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden" style="z-index: -1;">
+        <iframe 
+            src="https://www.youtube.com/embed/1V_4-f5Ocy4?autoplay=1&mute=1&controls=0&loop=1&playlist=1V_4-f5Ocy4&modestbranding=1&showinfo=0"
+            class="w-100 h-100"
+            style="object-fit: cover;"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+    <div class="position-relative container">
+        <h1 class="display-4 fw-bold mb-3">Selamat datang! <br> <?php echo $role; ?>: <?php echo $username; ?> </h1>
+        <h2 class="display-4 fw-bold mb-3">Jelajahi Keindahan Alam</h2>
+        <p class="lead mb-4 ">
+            Rasakan petualangan mendaki gunung bersama kami — rute terbaik, pengalaman luar biasa, dan pemandangan tak terlupakan.
+        </p>
+        <a href="booking.php" class="btn btn-success btn-lg shadow">Mulai Petualangan</a>
+    </div>
+
 </section>
 
 <section id="rute" class="py-5 bg-secondary">
@@ -136,7 +159,7 @@
         <div class="card-body">
           <h5 class="card-title fw-semibold">Gunung Slamet</h5>
           <p class="card-text text-muted small">Gunung tertinggi di Jawa Tengah favorit pejuang Seven Summit.</p>
-          <a href="Slamet.php" class="text-success fw-semibold">Lihat Detail →</a>
+          <a href="../controller/gunung_controller.php?id=1" class="text-success fw-semibold">Lihat Detail →</a>
         </div>
       </div>
 
@@ -145,7 +168,7 @@
         <div class="card-body">
           <h5 class="card-title fw-semibold">Gunung Merapi</h5>
           <p class="card-text text-muted small">Gunung paling aktif di Indonesia dengan sunrise epik.</p>
-          <a href="Merapi.php" class="text-success fw-semibold">Lihat Detail →</a>
+          <a href="../controller/gunung_controller.php?id=2" class="text-success fw-semibold">Lihat Detail →</a>
         </div>
       </div>
 

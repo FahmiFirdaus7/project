@@ -1,25 +1,17 @@
 <?php
 
-$hostname = "localhost";
-$username = "root";
-$port = "3306";
-$password = "";
-$database = "hiking";
+    $host = "localhost";
+    $port = "3306";
+    $user = "root";
+    $pass = "";
+    $db   = "hiking";
 
-$connection = null;
+    $koneksi = mysqli_connect($host, $user, $pass, $db);
+    $mysqli = new mysqli($host, $user, $pass, $db);
 
-try{
-    $connection = new mysqli($hostname, 
-                            $username, 
-                            $password,
-                            $database,
-                            $port);
-    
-
-} catch(mysqli_sql_exception $e) {
-    echo "Connection failed: " . $e->getMessage();
-    exit();
-} 
-
-
+    if(!$koneksi){
+        echo "gagal";
+    } else{
+        echo "berhasil";
+    }
 ?>

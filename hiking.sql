@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2025 at 12:03 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Waktu pembuatan: 08 Nov 2025 pada 03.33
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -37,46 +37,33 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galeri`
---
-
-CREATE TABLE `galeri` (
-  `id` int(11) NOT NULL,
-  `judul` varchar(100) NOT NULL,
-  `gambar` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `gunung`
+-- Struktur dari tabel `gunung`
 --
 
 CREATE TABLE `gunung` (
   `ID_Gunung` int(11) NOT NULL,
   `Nama Gunung` varchar(30) NOT NULL,
   `Lokasi` varchar(30) NOT NULL,
-  `Ketinggian` varchar(30) NOT NULL
+  `Keterangan` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemesanan`
+-- Struktur dari tabel `pemesanan`
 --
 
 CREATE TABLE `pemesanan` (
   `ID_Pemesanan` int(11) NOT NULL,
   `Nama Pengunjung` varchar(30) NOT NULL,
   `Nama Gunung` varchar(30) NOT NULL,
-  `Via Basecamp` varchar(100) NOT NULL,
   `Jadwal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengunjung`
+-- Struktur dari tabel `pengunjung`
 --
 
 CREATE TABLE `pengunjung` (
@@ -91,50 +78,56 @@ CREATE TABLE `pengunjung` (
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`ID_Admin`);
 
 --
--- Indexes for table `galeri`
---
-ALTER TABLE `galeri`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `gunung`
+-- Indeks untuk tabel `gunung`
 --
 ALTER TABLE `gunung`
   ADD PRIMARY KEY (`ID_Gunung`);
 
 --
--- Indexes for table `pemesanan`
+-- Indeks untuk tabel `pemesanan`
 --
 ALTER TABLE `pemesanan`
   ADD PRIMARY KEY (`ID_Pemesanan`);
 
 --
--- Indexes for table `pengunjung`
+-- Indeks untuk tabel `pengunjung`
 --
 ALTER TABLE `pengunjung`
   ADD PRIMARY KEY (`ID_Pengunjung`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
   MODIFY `ID_Admin` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `galeri`
+-- AUTO_INCREMENT untuk tabel `gunung`
 --
-ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `gunung`
+  MODIFY `ID_Gunung` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  MODIFY `ID_Pemesanan` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `pengunjung`
+--
+ALTER TABLE `pengunjung`
+  MODIFY `ID_Pengunjung` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
