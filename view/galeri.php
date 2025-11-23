@@ -44,7 +44,7 @@ $galeri = mysqli_query($koneksi, "SELECT * FROM galeri ORDER BY id DESC");
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="fw-bold">Galeri Pendakian</h2>
 
-    <a href="../controller/galeri_controller_tambah.php" class="btn btn-success">
+    <a href="galeri_tambah.php" class="btn btn-success">
       + Tambah Foto
     </a>
   </div>
@@ -63,7 +63,7 @@ $galeri = mysqli_query($koneksi, "SELECT * FROM galeri ORDER BY id DESC");
           </div>
 
           <div class="d-flex justify-content-between p-2">
-            <a href="../controller/galeri_controller_edit.php?id=<?= $g['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+            <a href="galeri_edit.php?id=<?= $g['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
             <a onclick="return confirm('Hapus foto ini?')"
               href="../controller/galeri_controller_hapus.php?id=<?= $g['id'] ?>"
               class="btn btn-danger btn-sm">Hapus</a>
