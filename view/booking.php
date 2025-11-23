@@ -41,18 +41,18 @@
 
             <div class="card-body">
 
-              <form>
+              <form action="../controller/booking_controller.php" method="POST">
 
                 <!-- Nama -->
                 <div class="mb-3">
                   <label class="form-label">Nama Lengkap</label>
-                  <input type="text" class="form-control" placeholder="Masukkan nama lengkap" required>
+                  <input type="text" class="form-control" placeholder="Masukkan nama lengkap" required name="namaBooking">
                 </div>
 
                 <!-- Gunung -->
                 <div class="mb-3">
                   <label class="form-label">Pilih Gunung</label>
-                  <select class="form-select" id="gunungSelect" required>
+                  <select class="form-select" name="gunungBooking" id="gunungSelect" required>
                     <option value="" disabled selected>Pilih gunung</option>
                     <option value="Slamet">Gunung Slamet</option>
                     <option value="Sumbing">Gunung Sumbing</option>
@@ -67,7 +67,7 @@
                 <!-- Basecamp -->
                 <div class="mb-3">
                   <label class="form-label">Basecamp</label>
-                  <select class="form-select" id="basecampSelect" required>
+                  <select class="form-select" id="basecampSelect" name="basecampBooking" required>
                     <option value="" disabled selected>Pilih basecamp</option>
                   </select>
                 </div>
@@ -75,7 +75,7 @@
                 <!-- Jadwal -->
                 <div class="mb-3">
                   <label class="form-label">Jadwal Pendakian</label>
-                  <input type="date" class="form-control" required>
+                  <input type="date" class="form-control" required name="date">
                 </div>
 
                 <!-- Submit -->
