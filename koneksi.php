@@ -8,10 +8,4 @@
 
     $koneksi = mysqli_connect($host, $user, $pass, $db);
     $mysqli = new mysqli($host, $user, $pass, $db);
-
-    if(!$koneksi){
-        echo "gagal";
-    } else{
-        echo "berhasil";
-    }
 ?>

@@ -1,10 +1,12 @@
 <?php
 session_start();
-$isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 
-// Ambil data foto dari database
+// SEMENTARA aktifkan admin untuk memastikan tombol muncul
+$isAdmin = true;
+
 include "../koneksi.php";
-$galeri = mysqli_query($connection, "SELECT * FROM galeri ORDER BY id DESC");
+
+$galeri = mysqli_query($koneksi, "SELECT * FROM galeri ORDER BY id DESC");
 ?>
 
 <!DOCTYPE html>
@@ -27,15 +29,12 @@ $galeri = mysqli_query($connection, "SELECT * FROM galeri ORDER BY id DESC");
 
 <body class="bg-light">
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">HikingAdventure</a>
+    <a class="navbar-brand fw-bold" href="#">Hiking Hub</a>
     <div>
       <a href="index.php" class="btn btn-light me-2">Beranda</a>
-      <?php if ($isAdmin): ?>
-        <a href="../controller/logout_controller.php" class="btn btn-danger">Logout</a>
-      <?php endif; ?>
+      <a href="../controller/logout_controller.php" class="btn btn-danger">Logout</a>
     </div>
   </div>
 </nav>
@@ -45,11 +44,9 @@ $galeri = mysqli_query($connection, "SELECT * FROM galeri ORDER BY id DESC");
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="fw-bold">Galeri Pendakian</h2>
 
-    <?php if ($isAdmin): ?>
-      <a href="galeri_tambah.php" class="btn btn-success">
-        + Tambah Foto
-      </a>
-    <?php endif; ?>
+    <a href="../controller/galeri_controller_tambah.php" class="btn btn-success">
+      + Tambah Foto
+    </a>
   </div>
 
   <div class="row g-4">
@@ -65,14 +62,12 @@ $galeri = mysqli_query($connection, "SELECT * FROM galeri ORDER BY id DESC");
             <p class="text-muted small"><?= $g['deskripsi'] ?></p>
           </div>
 
-          <?php if ($isAdmin): ?>
-            <div class="d-flex justify-content-between p-2">
-              <a href="galeri_edit.php?id=<?= $g['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-              <a onclick="return confirm('Hapus foto ini?')"
-                 href="../controller/galeri_hapus.php?id=<?= $g['id'] ?>"
-                 class="btn btn-danger btn-sm">Hapus</a>
-            </div>
-          <?php endif; ?>
+          <div class="d-flex justify-content-between p-2">
+            <a href="../controller/galeri_controller_edit.php?id=<?= $g['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+            <a onclick="return confirm('Hapus foto ini?')"
+              href="../controller/galeri_controller_hapus.php?id=<?= $g['id'] ?>"
+              class="btn btn-danger btn-sm">Hapus</a>
+          </div>
 
         </div>
       </div>

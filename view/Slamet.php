@@ -12,6 +12,7 @@ $gunung = $_SESSION['gunung_data'];
 // Gambar masih manual (boleh disimpan di tabel nanti)
 $gambar = [
     "https://kabarbaik.co/wp-content/uploads/2025/02/gunung-slamet.jpeg"
+    ,"https://superlive.id/storage/superadventure/2020/02/06/c5c1448fd3a3.jpg"
 ];
 
 // Fakta dan deskripsi boleh manual
@@ -78,14 +79,25 @@ Karakter khasnya adalah kawah besar yang selalu mengeluarkan asap sulfur.";
 <body class="bg-light text-dark">
 
 <!-- NAVBAR -->
-<header class="bg-success text-white py-3 shadow">
-    <div class="container d-flex justify-content-between align-items-center">
-        <h1 class="fw-bold fs-3">Hiking<span class="text-dark">Hub</span></h1>
-        <nav>
-            <a href="index.php" class="text-white text-decoration-none me-3">Beranda</a>
-            <a href="../controller/logout_controller.php" class="text-white text-decoration-none">Logout</a>
-        </nav>
+<header class="position-absolute w-100 z-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
+    <a class="navbar-brand fs-3 fw-bold text-white" href="index.php">Hiking<span class="text-success">Hub</span></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav text-white fw-semibold">
+        <li class="nav-item mx-2"><a href="index.php" class="nav-link">Beranda</a></li>
+        <li class="nav-item mx-2"><a href="#tentang" class="nav-link">Tentang</a></li>
+        <li class="nav-item mx-2"><a href="#rute" class="nav-link">Rute</a></li>
+        <li class="nav-item mx-2"><a href="#galeri" class="nav-link">Galeri</a></li>
+        <li class="nav-item mx-2"><a href="../controller/logout_controller.php" class="nav-link bg-success bg-gradient
+">Logout</a></li>
+      </ul>
     </div>
+  </nav>
 </header>
 
 <!-- HEADER GAMBAR -->

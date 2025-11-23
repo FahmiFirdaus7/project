@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Nov 2025 pada 07.56
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+-- Generation Time: Nov 23, 2025 at 10:40 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -35,28 +35,39 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`ID_Admin`, `Nama`, `Pass`, `No_HP`) VALUES
-(1, 'Fahmi Firdaus', 'Fhmfrds7', '089666526082');
+(1, 'Fahmi Firdaus', 'Fhmfrds7', '089666526082'),
+(2, 'Zamsteks', 'ZamsteksX6310', '081227717814');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `galeri`
+-- Table structure for table `galeri`
 --
 
 CREATE TABLE `galeri` (
   `id` int(11) NOT NULL,
-  `judul` varchar(100) NOT NULL,
-  `gambar` varchar(100) NOT NULL
+  `judul` varchar(255) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  `tanggal_upload` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `galeri`
+--
+
+INSERT INTO `galeri` (`id`, `judul`, `deskripsi`, `foto`, `tanggal_upload`) VALUES
+(1, 'Sindoro1', 'Sindoro Sunset Camp', 'Sindoro1.jpg', '2025-11-23 09:23:05'),
+(3, '', '', '1763890146_', '2025-11-23 09:29:06');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gunung`
+-- Table structure for table `gunung`
 --
 
 CREATE TABLE `gunung` (
@@ -68,17 +79,22 @@ CREATE TABLE `gunung` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `gunung`
+-- Dumping data for table `gunung`
 --
 
 INSERT INTO `gunung` (`ID_Gunung`, `Nama_Gunung`, `Lokasi`, `Ketinggian`, `Basecamp`) VALUES
-(1, 'Slamet', 'Kabupaten Banyumas, Purbalingga, Pemalang, Tegal, dan Brebes — Jawa Tengah', '3.428 mdpl', 4),
-(2, 'Merapi', 'Kabupaten Magelang, Boyolali dan Klaten dan Daerah Istimewa Yogyakarta (Kabupaten Sleman)', '2.968 mdpl', 3);
+(1, 'Slamet', 'Kabupaten Banyumas, Purbalingga, Pemalang, Tegal, dan Brebes — Jawa Tengah', '3.428 mdpl', 7),
+(2, 'Merapi', 'Kabupaten Magelang, Boyolali dan Klaten dan Daerah Istimewa Yogyakarta (Kabupaten Sleman)', '2.968 mdpl', 3),
+(3, 'Sindoro', 'Kabupaten Temanggung dan Kabupaten Wonosobo, Jawa Tengah', '3.153', 7),
+(4, 'Sumbing', 'Kabupaten Magelang, Kabupaten Temanggung, dan Kabupaten Wonosobo', '3.371', 5),
+(5, 'Prau', 'Kabupaten Batang, Kendal, Temanggung, dan Wonosobo', '2.590', 9),
+(6, 'Merbabu', 'Kabupaten Magelang, Kabupaten Boyolali, Kabupaten Semarang, dan Kabupaten Klaten.', '3.142', 4),
+(7, 'Lawu', 'Kabupaten Karanganyar Jawa Tengah, Ngawi, dan Magetan di Jawa Timur.', '3.265', 5);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pemesanan`
+-- Table structure for table `pemesanan`
 --
 
 CREATE TABLE `pemesanan` (
@@ -92,7 +108,7 @@ CREATE TABLE `pemesanan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengunjung`
+-- Table structure for table `pengunjung`
 --
 
 CREATE TABLE `pengunjung` (
@@ -104,7 +120,7 @@ CREATE TABLE `pengunjung` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pengunjung`
+-- Dumping data for table `pengunjung`
 --
 
 INSERT INTO `pengunjung` (`ID_Pengunjung`, `Nama_Pengunjung`, `Email`, `No_HP`, `Password`) VALUES
@@ -115,50 +131,50 @@ INSERT INTO `pengunjung` (`ID_Pengunjung`, `Nama_Pengunjung`, `Email`, `No_HP`, 
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`ID_Admin`);
 
 --
--- Indeks untuk tabel `galeri`
+-- Indexes for table `galeri`
 --
 ALTER TABLE `galeri`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `gunung`
+-- Indexes for table `gunung`
 --
 ALTER TABLE `gunung`
   ADD PRIMARY KEY (`ID_Gunung`);
 
 --
--- Indeks untuk tabel `pemesanan`
+-- Indexes for table `pemesanan`
 --
 ALTER TABLE `pemesanan`
   ADD PRIMARY KEY (`ID_Pemesanan`);
 
 --
--- Indeks untuk tabel `pengunjung`
+-- Indexes for table `pengunjung`
 --
 ALTER TABLE `pengunjung`
   ADD PRIMARY KEY (`ID_Pengunjung`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID_Admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_Admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `galeri`
+-- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

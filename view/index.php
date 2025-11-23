@@ -58,28 +58,6 @@
             transition: background-image 1s ease-in-out;
         }
   </style>
-  <script>
-        let backgrounds = [
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
-            "https://images.unsplash.com/photo-1509966756634-5f26f0577846?auto=format&fit=crop&w=1400&q=80",
-            "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1400&q=80",
-            "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1400&q=80"
-        ];
-
-        let index = 0;
-
-        function gantiBackground() {
-            document.body.style.backgroundImage = "url('" + backgrounds[index] + "')";
-            document.body.style.backgroundSize = "cover";
-            document.body.style.backgroundPosition = "center";
-
-            index = (index + 1) % backgrounds.length;
-        }
-
-        setInterval(gantiBackground, 5000);
-
-        window.onload = gantiBackground;
-    </script>
 </head>
 <body onload="showAlert()">
 <audio id="bg-music" src="sweden.mp3" autoplay loop hidden></audio>
@@ -122,9 +100,9 @@
 
     <div class="position-relative container">
         <h1 class="display-4 fw-bold mb-3">Selamat datang! <br> <?php echo $role; ?>: <?php echo $username; ?> </h1>
-        <h2 class="display-4 fw-bold mb-3">Jelajahi Keindahan Alam</h2>
+        <h2 class="display-4 fw-bold mb-3">di Hiking Hub</h2>
         <p class="lead mb-4 ">
-            Rasakan petualangan mendaki gunung bersama kami — rute terbaik, pengalaman luar biasa, dan pemandangan tak terlupakan.
+            panduan lengkap tentang The Seven Summits Jawa Tengah 
         </p>
         <a href="booking.php" class="btn btn-success btn-lg shadow">Mulai Petualangan</a>
     </div>
@@ -133,29 +111,29 @@
 
 <section id="rute" class="py-5 bg-secondary">
   <div class="container">
-    <h2 class="fw-bold text-center mb-4" style="color:white">Rute Populer</h2>
+    <h2 class="fw-bold text-center mb-4" style="color:white">The Seven Summits</h2>
 
     <div class="scroll-card-wrapper">
       <div class="card shadow scroll-card">
-        <img src="https://images.unsplash.com/photo-1508264165352-258859e62245?auto=format&fit=crop&w=800&q=80" class="card-img-top" height="200">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.iQ38tdy3CIBjj7GPLfnRtQHaED?rs=1&pid=ImgDetMain&o=7&rm=3" class="card-img-top" height="200">
         <div class="card-body">
           <h5 class="card-title fw-semibold">Gunung Sindoro</h5>
           <p class="card-text text-muted small">View lautan awan termewah di Jawa Tengah dengan panorama Gunung Sumbing.</p>
-          <a href="Sindoro.php" class="text-success fw-semibold">Lihat Detail →</a>
+          <a href="../controller/gunung_controller.php?id=3" class="text-success fw-semibold">Lihat Detail →</a>
         </div>
       </div>
 
       <div class="card shadow scroll-card">
-        <img src="https://images.unsplash.com/photo-1508261305436-14b9a7d8b9e7?auto=format&fit=crop&w=800&q=80" class="card-img-top" height="200">
+        <img src="https://backend.adventuraja.com/gallery/6220ea1004d564d4a6d0fb87/Gunung%20Sumbing.JPG" class="card-img-top" height="200">
         <div class="card-body">
           <h5 class="card-title fw-semibold">Gunung Sumbing</h5>
           <p class="card-text text-muted small">Trek ekstrim dengan kemiringan 70° ditambah panorama Sindoro dan Segara Banjaran.</p>
-          <a href="Sumbing.php" class="text-success fw-semibold">Lihat Detail →</a>
+          <a href="../controller/gunung_controller.php?id=4" class="text-success fw-semibold">Lihat Detail →</a>
         </div>
       </div>
 
       <div class="card shadow scroll-card">
-        <img src="https://images.unsplash.com/photo-1549887534-24a1d5c9e5c1?auto=format&fit=crop&w=800&q=80" class="card-img-top" height="200">
+        <img src="https://kabarbaik.co/wp-content/uploads/2025/02/gunung-slamet.jpeg" class="card-img-top" height="200">
         <div class="card-body">
           <h5 class="card-title fw-semibold">Gunung Slamet</h5>
           <p class="card-text text-muted small">Gunung tertinggi di Jawa Tengah favorit pejuang Seven Summit.</p>
@@ -164,7 +142,7 @@
       </div>
 
       <div class="card shadow scroll-card">
-        <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=800&q=80" class="card-img-top" height="200">
+        <img src="https://wallpaperaccess.com/full/14476998.jpg" class="card-img-top" height="200">
         <div class="card-body">
           <h5 class="card-title fw-semibold">Gunung Merapi</h5>
           <p class="card-text text-muted small">Gunung paling aktif di Indonesia dengan sunrise epik.</p>
@@ -173,29 +151,29 @@
       </div>
 
       <div class="card shadow scroll-card">
-        <img src="https://images.unsplash.com/photo-1523473827532-57f490e7f7bf?auto=format&fit=crop&w=800&q=80" class="card-img-top" height="200">
+        <img src="https://cdn.pixabay.com/photo/2018/12/03/13/59/mount-prau-3853487_1280.jpg" class="card-img-top" height="200">
         <div class="card-body">
           <h5 class="card-title fw-semibold">Gunung Prau</h5>
-          <p class="card-text text-muted small">King golden sunrise Dieng, ramah untuk pendaki pemula.</p>
-          <a href="Prau.php" class="text-success fw-semibold">Lihat Detail →</a>
+          <p class="card-text text-muted small">King golden sunrise Dieng dengan view asli gunung Aqua loh ya, ramah untuk pendaki pemula,</p>
+          <a href="../controller/gunung_controller.php?id=5" class="text-success fw-semibold">Lihat Detail →</a>
         </div>
       </div>
 
       <div class="card shadow scroll-card">
-        <img src="https://images.unsplash.com/photo-1518684079-fc5a2d43c9f4?auto=format&fit=crop&w=800&q=80" class="card-img-top" height="200">
+        <img src="https://wisatago.com/wp-content/uploads/local-images/local-gunung-merbabu-1744396402-7.webp" class="card-img-top" height="200">
         <div class="card-body">
           <h5 class="card-title fw-semibold">Gunung Merbabu</h5>
           <p class="card-text text-muted small">Padang savana luas dengan view Merapi dari dekat.</p>
-          <a href="Merbabu.php" class="text-success fw-semibold">Lihat Detail →</a>
+          <a href="../controller/gunung_controller.php?id=6" class="text-success fw-semibold">Lihat Detail →</a>
         </div>
       </div>
 
       <div class="card shadow scroll-card">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" class="card-img-top" height="200">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/025/068/688/original/aerial-view-of-mount-lawu-above-the-clouds-at-sunrise-indonesia-video.jpg" class="card-img-top" height="200">
         <div class="card-body">
           <h5 class="card-title fw-semibold">Gunung Lawu</h5>
           <p class="card-text text-muted small">Gunung penuh mistis & budaya, terkenal dengan Warung Mbok Yem.</p>
-          <a href="Lawu.php" class="text-success fw-semibold">Lihat Detail →</a>
+          <a href="../controller/gunung_controller.php?id=7" class="text-success fw-semibold">Lihat Detail →</a>
         </div>
       </div>
     </div>
