@@ -22,7 +22,7 @@
 
     <!-- Login Card -->
     <div class="relative bg-white/10 backdrop-blur-md rounded-2xl shadow-xl w-96 p-8 text-white z-10 border border-white/20">
-      <h2 class="text-3xl font-bold text-center mb-6">Login Admin</h2>
+      <h2 class="text-3xl font-bold text-center mb-6">Login</h2>
       
       <form action="../controller/login_controller.php" method="POST" class="space-y-5">
         <div>
