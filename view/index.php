@@ -56,7 +56,74 @@
     }
     body {
             transition: background-image 1s ease-in-out;
-        }
+            body {background-color: #111;
+            }
+          }
+    
+    #home {
+            margin-bottom: -3px;
+          }
+    #home iframe {
+            display: block;
+          }
+    #tentang {
+            padding: 0;
+            margin: 0;
+          }
+    #tentang h3 {
+            margin-bottom: 10px !important;
+          }
+    #tentang p {
+            margin: 0 !important;
+            padding-bottom: 20px;
+          }
+
+    #galeri img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+          }
+
+    #galeri img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+          }
+
+    .image-popup {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(3px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            display: none;
+          }
+
+      .image-popup img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+          }
+
+      .image-popup.show {
+            display: flex;
+          }
+
+      .scroll-card .card-body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+          }
+
+      .scroll-card .card-body a {
+            margin-top: auto;
+            display: inline-block;
+          }
+
+
   </style>
 </head>
 <body onload="showAlert()">
@@ -104,12 +171,21 @@
         <p class="lead mb-4 ">
             panduan lengkap tentang The Seven Summits Jawa Tengah 
         </p>
-        <a href="booking.php" class="btn btn-success btn-lg shadow">Mulai Petualangan</a>
+        <a href="#tentang" class="btn btn-success btn-lg shadow">Mulai Petualangan</a>
     </div>
 
 </section>
 
-<section id="rute" class="py-5 bg-secondary">
+<section id="tentang" class="py-20 bg-dark w-full block m-0 p-0">
+  <div class="max-w-6xl mx-auto text-center px-6 text-white">
+    <h3 class="text-3xl font-bold mb-4">Tentang Kami</h3>
+    <p class="max-w-3xl mx-auto">
+      Kami adalah komunitas pecinta alam yang berdedikasi untuk mengajak siapa pun menikmati keindahan alam Indonesia melalui kegiatan hiking yang aman, seru, dan penuh edukasi lingkungan.
+    </p>
+  </div>
+</section>
+
+<section id="rute" class="py-5 bg-dark">
   <div class="container">
     <h2 class="fw-bold text-center mb-4" style="color:white">The Seven Summits</h2>
 
@@ -180,29 +256,29 @@
   </div>
 </section>
 
-<section id="galeri" class="py-5 bg-secondary">
+<section id="galeri" class="py-5 bg-dark">
   <div class="container text-center">
     <h2 class="fw-bold mb-4" style="color: white;">Galeri Kami</h2>
 
     <div class="row g-3 justify-content-center">
       <div class="col-md-3 col-6">
         <img class="img-fluid rounded shadow-sm"
-          src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=600&q=80"
+          src="https://tse1.mm.bing.net/th/id/OIP.msFFL-P36VMJhVV3GlgiEwHaE7?rs=1&pid=ImgDetMain&o=7&rm=3"
           alt="">
       </div>
       <div class="col-md-3 col-6">
         <img class="img-fluid rounded shadow-sm"
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+          src="https://thumbs.dreamstime.com/b/aerial-view-mount-slamet-gunung-slamet-active-stratovolcano-purbalingga-regency-central-java-indonesia-aerial-263897364.jpg"
           alt="">
       </div>
       <div class="col-md-3 col-6">
         <img class="img-fluid rounded shadow-sm"
-          src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80"
+          src="https://www.gotravelly.com/blog/wp-content/uploads/2023/12/gunung-sindoro.jpg"
           alt="">
       </div>
       <div class="col-md-3 col-6">
         <img class="img-fluid rounded shadow-sm"
-          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+          src="https://cdn.idntimes.com/content-images/community/2022/07/mount-merbabu-7267828-1920-1-4c4e0935346233c8fec14261a45ff371-d607f41656ade22878b21d93fc0196f3.jpg"
           alt="">
       </div>
     </div>
@@ -232,6 +308,26 @@
       if (music.paused) {
           music.play();
       }
+  });
+</script>
+
+<div class="image-popup" id="imagePopup">
+  <img id="popupImage" src="">
+</div>
+
+<script>
+  const popup = document.getElementById("imagePopup");
+  const popupImg = document.getElementById("popupImage");
+
+  document.querySelectorAll("#galeri img").forEach(img => {
+    img.addEventListener("click", () => {
+      popupImg.src = img.src;
+      popup.classList.add("show");
+    });
+  });
+
+  popup.addEventListener("click", () => {
+    popup.classList.remove("show");
   });
 </script>
 

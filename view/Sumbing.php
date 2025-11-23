@@ -11,23 +11,30 @@ $gunung = $_SESSION['gunung_data'];
 
 // Gambar masih manual (boleh disimpan di tabel nanti)
 $gambar = [
-    "https://kabarbaik.co/wp-content/uploads/2025/02/gunung-slamet.jpeg"
-    ,"https://superlive.id/storage/superadventure/2020/02/06/c5c1448fd3a3.jpg"
+    "https://superlive.id/storage/superadventure/2020/11/29/5a299ec365ad.jpg",
+    "https://mounture.com/wp-content/uploads/2019/08/Sumbing-Mount.png",
+    "https://tse1.mm.bing.net/th/id/OIP.-tWVerSDQbDTq9iragXGWAHaE7?rs=1&pid=ImgDetMain&o=7&rm=320",
+    "https://www.jomblangcavetours.com/images/packages/mount-sumbing-tour-57.jpeg",
+    "https://tse3.mm.bing.net/th/id/OIP.-GyiLM564VkeeFMOBazL8wHaD4?rs=1&pid=ImgDetMain&o=7&rm=3"
+
 ];
 
 // Fakta dan deskripsi boleh manual
 $fakta = $gunung['fakta'] ?? [
-    "Termasuk gunung paling luas di Jawa.",
-    "Puncaknya sering berkabut tebal dengan suhu bisa mencapai 5°C.",
-    "Jalur paling populer: Bambangan (Purbalingga).",
-    "Dijuluki sebagai 'atap Jawa Tengah'."
+    "Kakak tertua Gunung Sindoro, lebih tinggi dan lebih terjal.
+Memiliki kawah raksasa yang bisa dijelajahi hingga ke dasar (dengan jalur tertentu).
+Pemandangan sunrise dan milky way sangat jernih, terutama dari Pos 3 atau puncak.
+Jalur via Garung paling populer, terkenal dengan tanjakannya yang konsisten.
+Sering menjadi tempat latihan fisik pendaki karena medannya yang cukup berat.
+Dikelilingi desa-desa tembakau, menghasilkan kualitas tembakau terbaik di Temanggung.
+Panorama puncak super luas, bisa melihat Sindoro, Merapi, Merbabu, Prau, Slamet, hingga rangkaian Dieng."
 ];
 
 // Jika kamu juga menyimpan deskripsi di session, gunakan:
 // $deskripsi = $gunung['deskripsi'] ?? "Deskripsi manual di HTML...";
-$deskripsi = "Gunung Slamet adalah gunung tertinggi di Jawa Tengah dan gunung berapi aktif tipe strato.
-Pendakiannya cukup menantang dengan jalur panjang, cuaca ekstrem, serta medan berbatu di area puncak.
-Karakter khasnya adalah kawah besar yang selalu mengeluarkan asap sulfur.";
+$deskripsi = "Gunung Sumbing (3.371 mdpl) adalah gunung berapi tertinggi kedua di Jawa Tengah yang berdiri megah berdampingan dengan Gunung Sindoro.
+Gunung ini dikenal memiliki jalur pendakian yang cukup menantang,
+dengan puncak kawah luas yang penuh batuan vulkanik dan panorama alam yang menakjubkan.";
 ?>
 ];
 ?>
@@ -76,7 +83,7 @@ Karakter khasnya adalah kawah besar yang selalu mengeluarkan asap sulfur.";
   </style>
 </head>
 
-<body class="bg-light text-dark">
+<body class="bg-black text-white">
 
 <!-- NAVBAR -->
 <header class="position-absolute w-100 z-3">
@@ -116,31 +123,31 @@ Karakter khasnya adalah kawah besar yang selalu mengeluarkan asap sulfur.";
 <!-- DETAIL -->
 <section class="container py-5">
 
-    <div class="bg-white p-5 rounded-4 shadow">
+    <div class="bg-dark p-5 rounded-4 shadow">
 
         <h3 class="fw-bold"><?= $gunung['Nama_Gunung']; ?></h3>
-        <p class="text-secondary"><?= nl2br($deskripsi); ?></p>
+        <p class="text-white"><?= nl2br($deskripsi); ?></p>
 
         <div class="row my-4">
             <div class="col-md-6 mb-3">
-                <h4>📌 Ketinggian</h4>
+                <h4>Ketinggian</h4>
                 <p><?= $gunung['Ketinggian']; ?> mdpl</p>
             </div>
 
             <div class="col-md-6 mb-3">
-                <h4>📍 Lokasi</h4>
+                <h4>Lokasi</h4>
                 <p><?= $gunung['Lokasi']; ?></p>
             </div>
 
             <div class="col-md-6 mb-3">
-                <h4>⛺ Jumlah Basecamp</h4>
+                <h4>Jumlah Basecamp</h4>
                 <p><?= $gunung['Basecamp']; ?> basecamp</p>
             </div>
         </div>
 
 <div class="col-md-8">
-    <h4 class="fw-semibold mb-3">⭐ Fakta Menarik</h4>
-    <ul class="text-secondary">
+    <h4 class="fw-semibold mb-3">Fakta Menarik</h4>
+    <ul class="text-white">
         <?php foreach ($fakta as $f): ?>
             <li class="mb-2"><?= htmlspecialchars($f); ?></li>
         <?php endforeach; ?>

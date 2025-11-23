@@ -11,23 +11,29 @@ $gunung = $_SESSION['gunung_data'];
 
 // Gambar masih manual (boleh disimpan di tabel nanti)
 $gambar = [
-    "https://kabarbaik.co/wp-content/uploads/2025/02/gunung-slamet.jpeg"
-    ,"https://superlive.id/storage/superadventure/2020/02/06/c5c1448fd3a3.jpg"
+    "https://cdn1-production-images-kly.akamaized.net/rRUbCZCoreWvDS95DtN6t1MlODA=/0x32:768x465/1200x675/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3538621/original/001813700_1628770582-Lawu_1.JPG",
+    "https://tse3.mm.bing.net/th/id/OIP.tZrM58ppAWHD0qwFmHFQuwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
+    "https://telusuri.id/wp-content/uploads/2022/10/View-Mendekati-Pos-4.jpg",
+    "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1634025439/01j3frm9vm9w9vkwkn3vbsgpr7.jpg",
+    "https://1.bp.blogspot.com/-3xRpg-XTsEw/XVL7ew6eXLI/AAAAAAAABsw/bw_sKb2OhN07jIgkYfqfClW7D3OMFePrQCLcBGAs/s1600/Gunung%2BLawu.jpg"
 ];
 
 // Fakta dan deskripsi boleh manual
 $fakta = $gunung['fakta'] ?? [
-    "Termasuk gunung paling luas di Jawa.",
-    "Puncaknya sering berkabut tebal dengan suhu bisa mencapai 5°C.",
-    "Jalur paling populer: Bambangan (Purbalingga).",
-    "Dijuluki sebagai 'atap Jawa Tengah'."
+"Gunung dengan aura mistis kuat, banyak petilasan dan tempat spiritual di sepanjang jalur.
+Tiga puncak utama: Hargo Dalem, Hargo Dumilah (tertinggi), dan Hargo Dumiling.
+Warung Mbok Yem di puncak, salah satu warung tertinggi di Indonesia dan legenda bagi pendaki.
+Jalur Cemoro Kandang & Cemoro Sewu paling populer, terkenal rapi dan ramah pemula.
+Banyak bunga edelweis, terutama di sekitar sabana dan puncak.
+Gunung non-aktif, terakhir erupsi diperkirakan ribuan tahun lalu.
+Pemandangan malam sangat jernih, bisa melihat kota Magetan–Solo berkelap-kelip dari jalur."
 ];
 
 // Jika kamu juga menyimpan deskripsi di session, gunakan:
 // $deskripsi = $gunung['deskripsi'] ?? "Deskripsi manual di HTML...";
-$deskripsi = "Gunung Slamet adalah gunung tertinggi di Jawa Tengah dan gunung berapi aktif tipe strato.
-Pendakiannya cukup menantang dengan jalur panjang, cuaca ekstrem, serta medan berbatu di area puncak.
-Karakter khasnya adalah kawah besar yang selalu mengeluarkan asap sulfur.";
+$deskripsi = "Gunung Lawu (3.265 mdpl) adalah gunung stratovolcano tua yang terletak di perbatasan Jawa Tengah–Jawa Timur.
+Lawu terkenal akan suasananya yang mistis, hutan pinus yang tenang,serta pemandangan puncak dan sabana luas.
+Selain jalurnya yang ramah, Lawu juga kaya sejarah dan budaya, menjadi salah satu gunung paling sakral di Jawa.";
 ?>
 ];
 ?>
@@ -76,7 +82,7 @@ Karakter khasnya adalah kawah besar yang selalu mengeluarkan asap sulfur.";
   </style>
 </head>
 
-<body class="bg-light text-dark">
+<body class="bg-black text-white">
 
 <!-- NAVBAR -->
 <header class="position-absolute w-100 z-3">
@@ -114,31 +120,31 @@ Karakter khasnya adalah kawah besar yang selalu mengeluarkan asap sulfur.";
 <!-- DETAIL -->
 <section class="container py-5">
 
-    <div class="bg-white p-5 rounded-4 shadow">
+    <div class="bg-dark p-5 rounded-4 shadow">
 
         <h3 class="fw-bold"><?= $gunung['Nama_Gunung']; ?></h3>
-        <p class="text-secondary"><?= nl2br($deskripsi); ?></p>
+        <p class="text-white"><?= nl2br($deskripsi); ?></p>
 
         <div class="row my-4">
             <div class="col-md-6 mb-3">
-                <h4>📌 Ketinggian</h4>
+                <h4>Ketinggian</h4>
                 <p><?= $gunung['Ketinggian']; ?> mdpl</p>
             </div>
 
             <div class="col-md-6 mb-3">
-                <h4>📍 Lokasi</h4>
+                <h4>Lokasi</h4>
                 <p><?= $gunung['Lokasi']; ?></p>
             </div>
 
             <div class="col-md-6 mb-3">
-                <h4>⛺ Jumlah Basecamp</h4>
+                <h4>Jumlah Basecamp</h4>
                 <p><?= $gunung['Basecamp']; ?> basecamp</p>
             </div>
         </div>
 
 <div class="col-md-8">
-    <h4 class="fw-semibold mb-3">⭐ Fakta Menarik</h4>
-    <ul class="text-secondary">
+    <h4 class="fw-semibold mb-3">Fakta Menarik</h4>
+    <ul class="text-white">
         <?php foreach ($fakta as $f): ?>
             <li class="mb-2"><?= htmlspecialchars($f); ?></li>
         <?php endforeach; ?>

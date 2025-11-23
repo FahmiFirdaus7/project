@@ -11,23 +11,29 @@ $gunung = $_SESSION['gunung_data'];
 
 // Gambar masih manual (boleh disimpan di tabel nanti)
 $gambar = [
-    "https://kabarbaik.co/wp-content/uploads/2025/02/gunung-slamet.jpeg"
-    ,"https://superlive.id/storage/superadventure/2020/02/06/c5c1448fd3a3.jpg"
+    "https://asset.kompas.com/crops/4a4gz_AwNbNrtxXfIJyILREU7EQ=/0x0:800x533/1200x800/data/photo/2018/12/03/367871321.jpg",
+    "https://elfaaza.com/wp-content/uploads/2023/06/mount-prau-3853487_1280-1-1.webp",
+    "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2021/03/02/88d40aa2-715d-46fa-8a14-c93197c63987-1614692773842-c2806f604d37eb77321ad126cf294dec.jpg",
+    "https://asset-2.tstatic.net/travel/foto/bank/images/Pemandangan-Gunung-Prau-di-daerah-Dieng-Jawa-Tengah-yang-begitu-megah.jpg",
+    "https://sumbingsegar.com/wp-content/uploads/2023/08/Gunung-Prau-Via-Wates.jpg"
 ];
 
 // Fakta dan deskripsi boleh manual
 $fakta = $gunung['fakta'] ?? [
-    "Termasuk gunung paling luas di Jawa.",
-    "Puncaknya sering berkabut tebal dengan suhu bisa mencapai 5°C.",
-    "Jalur paling populer: Bambangan (Purbalingga).",
-    "Dijuluki sebagai 'atap Jawa Tengah'."
+    "Gunung dengan sunrise terindah di Jawa, terkenal sebagai “Golden Sunrise Dieng”.
+Puncaknya berupa sabana/padang luas yang sangat cocok camping dan foto.
+Jalur pendakian pendek, rata-rata hanya 2–3 jam (via Patak Banteng paling populer).
+Panorama puncaknya super lengkap, bisa melihat Sindoro, Sumbing, Merbabu, Merapi, hingga Slamet.
+Bentuk bukit-bukitnya bergelombang seperti “teletubbies hills”.
+Ramai banget saat weekend, terutama musim kemarau.
+Suhu sangat dingin, bisa mencapai 0–5°C saat malam."
 ];
 
 // Jika kamu juga menyimpan deskripsi di session, gunakan:
 // $deskripsi = $gunung['deskripsi'] ?? "Deskripsi manual di HTML...";
-$deskripsi = "Gunung Slamet adalah gunung tertinggi di Jawa Tengah dan gunung berapi aktif tipe strato.
-Pendakiannya cukup menantang dengan jalur panjang, cuaca ekstrem, serta medan berbatu di area puncak.
-Karakter khasnya adalah kawah besar yang selalu mengeluarkan asap sulfur.";
+$deskripsi = "Gunung Prau (±2.565 mdpl) adalah gunung favorit pendaki pemula di Jawa Tengah yang terkenal dengan sunrise berwarna emas,
+bukit-bukit rumput bergelombang, dan panorama pegunungan yang sangat luas.
+Jalurnya relatif singkat, dengan puncak berupa padang rumput panjang yang fotogenik.";
 ?>
 ];
 ?>
@@ -76,7 +82,7 @@ Karakter khasnya adalah kawah besar yang selalu mengeluarkan asap sulfur.";
   </style>
 </head>
 
-<body class="bg-light text-dark">
+<body class="bg-black text-white">
 
 <!-- NAVBAR -->
 <header class="position-absolute w-100 z-3">
@@ -116,31 +122,31 @@ Karakter khasnya adalah kawah besar yang selalu mengeluarkan asap sulfur.";
 <!-- DETAIL -->
 <section class="container py-5">
 
-    <div class="bg-white p-5 rounded-4 shadow">
+    <div class="bg-dark p-5 rounded-4 shadow">
 
         <h3 class="fw-bold"><?= $gunung['Nama_Gunung']; ?></h3>
-        <p class="text-secondary"><?= nl2br($deskripsi); ?></p>
+        <p class="text-light"><?= nl2br($deskripsi); ?></p>
 
         <div class="row my-4">
             <div class="col-md-6 mb-3">
-                <h4>📌 Ketinggian</h4>
+                <h4>Ketinggian</h4>
                 <p><?= $gunung['Ketinggian']; ?> mdpl</p>
             </div>
 
             <div class="col-md-6 mb-3">
-                <h4>📍 Lokasi</h4>
+                <h4>Lokasi</h4>
                 <p><?= $gunung['Lokasi']; ?></p>
             </div>
 
             <div class="col-md-6 mb-3">
-                <h4>⛺ Jumlah Basecamp</h4>
+                <h4>Jumlah Basecamp</h4>
                 <p><?= $gunung['Basecamp']; ?> basecamp</p>
             </div>
         </div>
 
 <div class="col-md-8">
-    <h4 class="fw-semibold mb-3">⭐ Fakta Menarik</h4>
-    <ul class="text-secondary">
+    <h4 class="fw-semibold mb-3">Fakta Menarik</h4>
+    <ul class="text-light">
         <?php foreach ($fakta as $f): ?>
             <li class="mb-2"><?= htmlspecialchars($f); ?></li>
         <?php endforeach; ?>
