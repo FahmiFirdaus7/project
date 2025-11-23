@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2025 at 10:40 AM
+-- Generation Time: Nov 23, 2025 at 01:59 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -56,14 +56,6 @@ CREATE TABLE `galeri` (
   `tanggal_upload` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `galeri`
---
-
-INSERT INTO `galeri` (`id`, `judul`, `deskripsi`, `foto`, `tanggal_upload`) VALUES
-(1, 'Sindoro1', 'Sindoro Sunset Camp', 'Sindoro1.jpg', '2025-11-23 09:23:05'),
-(3, '', '', '1763890146_', '2025-11-23 09:29:06');
-
 -- --------------------------------------------------------
 
 --
@@ -99,9 +91,9 @@ INSERT INTO `gunung` (`ID_Gunung`, `Nama_Gunung`, `Lokasi`, `Ketinggian`, `Basec
 
 CREATE TABLE `pemesanan` (
   `ID_Pemesanan` int(11) NOT NULL,
-  `Nama Pengunjung` varchar(30) NOT NULL,
-  `Nama Gunung` varchar(30) NOT NULL,
-  `Via Basecamp` varchar(100) NOT NULL,
+  `Nama_Pengunjung` varchar(30) NOT NULL,
+  `Nama_Gunung` varchar(30) NOT NULL,
+  `Via_Basecamp` varchar(100) NOT NULL,
   `Jadwal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -174,7 +166,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  MODIFY `ID_Pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
