@@ -2,7 +2,6 @@
 <?php
 session_start();
 
-// SEMENTARA aktifkan admin untuk memastikan tombol muncul
 $isAdmin = true;
 
 include "../koneksi.php";

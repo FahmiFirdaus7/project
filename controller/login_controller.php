@@ -5,7 +5,6 @@ session_start();
 $nama = $_POST['Nama'];
 $pass = $_POST['Pass'];
 
-// Cek admin
 $sql_admin = "SELECT Nama, Pass FROM admin WHERE Nama = ? LIMIT 1";
 $stmt = $koneksi->prepare($sql_admin);
 $stmt->bind_param("s", $nama);
@@ -17,7 +16,6 @@ if ($result_admin->num_rows === 1) {
 
     if ($pass === $row['Pass']) {
 
-        // SIMPAN SESSION YANG DIPAKAI DI index.php
         $_SESSION['username'] = $row['Nama'];
         $_SESSION['role'] = "Admin";
 
@@ -26,7 +24,6 @@ if ($result_admin->num_rows === 1) {
     }
 }
 
-// Cek pengunjung
 $sql_user = "SELECT Nama_Pengunjung, Password FROM pengunjung WHERE Nama_Pengunjung = ? LIMIT 1";
 $stmt = $koneksi->prepare($sql_user);
 $stmt->bind_param("s", $nama);
@@ -38,7 +35,6 @@ if ($result_user->num_rows === 1) {
 
     if ($pass === $row['Password']) {
 
-        // SIMPAN SESSION USER
         $_SESSION['username'] = $row['Nama_Pengunjung'];
         $_SESSION['role'] = "Pengunjung";
 
@@ -47,6 +43,5 @@ if ($result_user->num_rows === 1) {
     }
 }
 
-// Jika gagal login
 header("Location: ../view/login.php?error=1");
 exit();

@@ -36,8 +36,7 @@ $deskripsi = "Gunung Sumbing (3.371 mdpl) adalah gunung berapi tertinggi kedua d
 Gunung ini dikenal memiliki jalur pendakian yang cukup menantang,
 dengan puncak kawah luas yang penuh batuan vulkanik dan panorama alam yang menakjubkan.";
 ?>
-];
-?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

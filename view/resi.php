@@ -1,5 +1,5 @@
 <?php
-include_once "../controller/booking_controller.php";
+
 include "../koneksi.php";
 
 // Ambil ID dari URL

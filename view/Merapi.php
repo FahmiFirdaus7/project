@@ -37,8 +37,7 @@ adalah gunung berapi paling aktif di Indonesia yang terletak di perbatasan Yogya
 Aktivitasnya yang hampir terus-menerus membuat bentuk puncaknya sering berubah.
 Meski berbahaya, Merapi punya daya tarik kuat karena megah, mistis, dan penuh sejarah.";
 ?>
-];
-?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

@@ -1,9 +1,6 @@
 <?php
-
-      require_once '../koneksi.php';
-
+require_once '../koneksi.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="id">
@@ -11,49 +8,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Hiking Hub</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .form-control {
+      background: rgba(255, 255, 255, 0.25);
+      color: white;
+      border: none;
+    }
+
+    .form-control::placeholder {
+      color: #e0e0e0;
+    }
+
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.35);
+      color: white;
+      box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5);
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
 
-  <!-- Background -->
-  <div class="relative min-h-screen flex items-center justify-center bg-cover bg-center" 
-       style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500&q=80');">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+<body>
 
-    <!-- Login Card -->
-    <div class="relative bg-white/10 backdrop-blur-md rounded-2xl shadow-xl w-96 p-8 text-white z-10 border border-white/20">
-      <h2 class="text-3xl font-bold text-center mb-6">Login</h2>
-      
-      <form action="../controller/login_controller.php" method="POST" class="space-y-5">
-        <div>
-          <label class="block mb-1 font-medium">Username</label>
-          <input type="text" name="Nama" required
-                 class="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400">
-        </div>
+  <div class="min-vh-100 d-flex justify-content-center align-items-center position-relative"
+       style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500&q=80');
+              background-size: cover;
+              background-position: center;">
 
-        <div>
-          <label class="block mb-1 font-medium">Password</label>
-          <input type="password" name="Pass" required
-                 class="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400">
-        </div>
+      <div class="position-absolute top-0 start-0 w-100 h-100" 
+           style="background: rgba(0,0,0,0.6);"></div>
 
-        <button type="submit" 
-                class="w-full bg-green-500 hover:bg-green-600 transition text-white font-semibold py-2 rounded-lg shadow-lg">
-          Masuk
-        </button>
-      </form>
+      <div class="glass-card p-4 p-md-5 text-white position-relative" style="width: 380px; z-index: 5;">
 
-      <!-- Tambahan Sign Up -->
-      <p class="text-center text-sm mt-4 text-gray-200">
-        Sudah punya akun?
-        <a href="register.php" class="text-green-300 hover:text-green-400 font-semibold">
-          Sign up di sini
-        </a>
-      </p>
+          <h2 class="text-center fw-bold mb-4">Login</h2>
 
-      <p class="text-sm text-center mt-6 text-gray-200">© 2025 Hiking Hub</p>
-    </div>
+          <form action="../controller/login_controller.php" method="POST" class="mb-3">
+
+              <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" name="Nama" required class="form-control py-2" placeholder="Masukkan username">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="Pass" required class="form-control py-2" placeholder="Masukkan password">
+              </div>
+
+              <button class="btn btn-success w-100 py-2 fw-semibold">
+                Masuk
+              </button>
+
+          </form>
+
+          <p class="text-center mt-3">
+            Belum punya akun?
+            <a href="register.php" class="text-success fw-bold text-decoration-none">Daftar di sini</a>
+          </p>
+
+          <p class="text-center mt-4 text-white-50">© 2025 Hiking Hub</p>
+
+      </div>
+
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -200,7 +200,7 @@
       </div>
 
       <div class="card shadow scroll-card">
-        <img src="https://backend.adventuraja.com/gallery/6220ea1004d564d4a6d0fb87/Gunung%20Sumbing.JPG" class="card-img-top" height="200">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Gunung_Sumbing.png" class="card-img-top" height="200">
         <div class="card-body">
           <h5 class="card-title fw-semibold">Gunung Sumbing</h5>
           <p class="card-text text-muted small">Trek ekstrim dengan kemiringan 70° ditambah panorama Sindoro dan Segara Banjaran.</p>

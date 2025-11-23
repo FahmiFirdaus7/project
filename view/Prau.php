@@ -35,8 +35,7 @@ $deskripsi = "Gunung Prau (±2.565 mdpl) adalah gunung favorit pendaki pemula di
 bukit-bukit rumput bergelombang, dan panorama pegunungan yang sangat luas.
 Jalurnya relatif singkat, dengan puncak berupa padang rumput panjang yang fotogenik.";
 ?>
-];
-?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

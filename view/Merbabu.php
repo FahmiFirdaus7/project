@@ -35,8 +35,7 @@ $deskripsi = "Gunung Merbabu (3.145 mdpl) adalah gunung non-aktif di Jawa Tengah
 jalur pendakian yang indah, dan panorama puncak yang menampilkan Gunung Merapi secara sangat dekat.
 Merbabu menjadi salah satu gunung paling fotogenik di Jawa karena perpaduan hutan, bukit, dan sabananya.";
 ?>
-];
-?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

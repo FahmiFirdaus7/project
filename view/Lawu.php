@@ -35,8 +35,7 @@ $deskripsi = "Gunung Lawu (3.265 mdpl) adalah gunung stratovolcano tua yang terl
 Lawu terkenal akan suasananya yang mistis, hutan pinus yang tenang,serta pemandangan puncak dan sabana luas.
 Selain jalurnya yang ramah, Lawu juga kaya sejarah dan budaya, menjadi salah satu gunung paling sakral di Jawa.";
 ?>
-];
-?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
