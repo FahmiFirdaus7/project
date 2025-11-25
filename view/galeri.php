@@ -55,6 +55,23 @@ $galeri = mysqli_query($koneksi, "SELECT * FROM galeri ORDER BY id DESC");
 </head>
 
 <body>
+<header class="position-absolute w-100 z-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
+    <a class="navbar-brand fs-3 fw-bold text-white" href="index.php">Hiking<span class="text-success">Hub</span></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav text-white fw-semibold">
+        <li class="nav-item mx-2"><a href="index.php" class="nav-link">Beranda</a></li>
+        <li class="nav-item mx-2"><a href="../controller/logout_controller.php" class="nav-link bg-success bg-gradient
+">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
 <iframe 
     class="bg-video"
@@ -67,16 +84,6 @@ $galeri = mysqli_query($koneksi, "SELECT * FROM galeri ORDER BY id DESC");
 <div class="bg-video-overlay"></div>
 
 <div class="bg-video-overlay"></div>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Hiking Hub</a>
-    <div>
-      <a href="index.php" class="btn btn-light me-2">Beranda</a>
-      <a href="../controller/logout_controller.php" class="btn btn-danger">Logout</a>
-    </div>
-  </div>
-</nav>
 
 <div class="container py-5">
 
@@ -98,14 +105,14 @@ $galeri = mysqli_query($koneksi, "SELECT * FROM galeri ORDER BY id DESC");
 
           <div class="p-2">
             <h6 class="fw-bold mb-1"><?= $g['judul'] ?></h6>
-            <p class="text-muted small"><?= $g['deskripsi'] ?></p>
+            <p class="text muted"><?= $g['deskripsi'] ?></p>
           </div>
 
           <div class="d-flex justify-content-between p-2">
-            <a href="galeri_edit.php?id=<?= $g['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+            <a href="galeri_edit.php?id=<?= $g['id'] ?>" class="btn btn-success btn-sm">Edit</a>
             <a onclick="return confirm('Hapus foto ini?')"
               href="../controller/galeri_controller_hapus.php?id=<?= $g['id'] ?>"
-              class="btn btn-danger btn-sm">Hapus</a>
+              class="btn btn-secondary btn-sm">Hapus</a>
           </div>
 
         </div>

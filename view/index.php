@@ -180,7 +180,19 @@
   <div class="max-w-6xl mx-auto text-center px-6 text-white">
     <h3 class="text-3xl font-bold mb-4">Tentang Kami</h3>
     <p class="max-w-3xl mx-auto">
-      Kami adalah komunitas pecinta alam yang berdedikasi untuk mengajak siapa pun menikmati keindahan alam Indonesia melalui kegiatan hiking yang aman, seru, dan penuh edukasi lingkungan.
+      Hiking Hub lahir dari semangat untuk menghubungkan para pecinta alam dengan informasi pendakian yang lebih mudah, akurat, dan ramah pemula.
+      <br>
+      Kami menyadari bahwa banyak pendaki terutama pemula sering kesulitan mencari informasi jalur, kondisi gunung, perlengkapan yang tepat, hingga perkiraan cuaca sebelum mendaki.
+      <br>
+      Dari kebutuhan itulah Hiking Hub dibuat.
+      <br>
+      Website ini dibangun sebagai ruang bersama bagi komunitas pendaki untuk berbagi pengalaman, tips, dan rekomendasi.
+      <br>
+      Dengan tampilan sederhana namun informatif, Hiking Hub berupaya menjadi pusat informasi pendakian yang membantu siapa pun merencanakan perjalanan outdoor secara aman, nyaman, dan menyenangkan.
+      <br>
+      Kami percaya bahwa kegiatan mendaki bukan sekadar olahraga, tetapi juga cara untuk mendekatkan diri dengan alam, menantang diri sendiri, dan membangun solidaritas.
+      <br>
+      Karena itu, Hiking Hub hadir untuk mendukung petualanganmu—dari rencana awal hingga puncak..
     </p>
   </div>
 </section>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2025 at 01:59 PM
+-- Generation Time: Nov 25, 2025 at 06:15 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,6 +55,17 @@ CREATE TABLE `galeri` (
   `foto` varchar(255) NOT NULL,
   `tanggal_upload` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `galeri`
+--
+
+INSERT INTO `galeri` (`id`, `judul`, `deskripsi`, `foto`, `tanggal_upload`) VALUES
+(7, 'Lawu1', 'Lawu1', '1764045576_20230214_164331.jpg', '2025-11-25 04:39:36'),
+(8, 'Lawu2', 'Pos 5', '1764045640_20230713_103933.jpg', '2025-11-25 04:40:40'),
+(9, 'Lawu3', 'Sunset', '1764045667_20230214_170812.jpg', '2025-11-25 04:41:07'),
+(10, 'Lawu4', 'Lautan awan', '1764045710_20230712_153722.jpg', '2025-11-25 04:41:50'),
+(11, 'Lawu5', 'Kawah', '1764045769_20250501_132424.jpg', '2025-11-25 04:42:49');
 
 -- --------------------------------------------------------
 
@@ -166,7 +177,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `pemesanan`

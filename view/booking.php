@@ -18,6 +18,23 @@
 
   <body class="bg-light">
 
+  <header class="position-absolute w-100 z-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
+    <a class="navbar-brand fs-3 fw-bold text-white" href="index.php">Hiking<span class="text-success">Hub</span></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav text-white fw-semibold">
+        <li class="nav-item mx-2"><a href="../controller/logout_controller.php" class="nav-link bg-success bg-gradient
+">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
   <!-- BACKGROUND FIX -->
   <div style="
     position: relative;
